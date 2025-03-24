@@ -120,7 +120,25 @@ async function vote(team) {
       /*
        * ++++ YOUR CODE HERE ++++
        */
-      window.alert(`Not implemented yet!`);
+      const formData = new URLSearchParams();
+      formData.append("team", team);
+
+      // Send a POST request to the backend with the required headers
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Authorization": `Bearer ${token}`
+        },
+        body: formData.toString()
+      });
+
+      // Check the response and alert the user
+      if (response.ok) {
+        window.alert("Vote submitted successfully!");
+      } else {
+        window.alert("Error submitting vote. Please try again.");
+      }
 
     } catch (err) {
       console.log(`Error when submitting vote: ${err}`);
@@ -130,3 +148,4 @@ async function vote(team) {
     window.alert('User not signed in.');
   }
 }
+

@@ -17,3 +17,4 @@ const config = {
   apiKey: 'AIzaSyC0qN4TMdIbFOwbgb-QTyqlbS2oQ_V29go',
   authDomain: 'cs1660project3-454702.firebaseapp.com',
 };
+export default firebaseConfig;

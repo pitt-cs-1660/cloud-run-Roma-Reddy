@@ -60,7 +60,9 @@
       document.getElementById("voteSpaces").addEventListener("click", function () {
         vote("SPACES");
       });
-      document.getElementById("signInButton").addEventListener("click", toggle);
+      document.getElementById("signInButton").addEventListener("click", function () {
+        toggle();
+      });
     });
   </script>
 </body>
